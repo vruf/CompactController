@@ -74,11 +74,11 @@ class PopoverViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(segmentedControl)
         view.addSubview(dismissButton)
+        setFrameHeight(height: 280, index: 0)
     }
         
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        segmentedControl.selectedSegmentIndex = 0
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
@@ -99,7 +99,6 @@ class PopoverViewController: UIViewController {
             self.preferredContentSize = .init(width: self.view.frame.width, height: CGFloat(height))
         }
         self.segmentedControl.selectedSegmentIndex = index
-        print(view.frame.height)
     }
     
     @objc private func dismissView() {
